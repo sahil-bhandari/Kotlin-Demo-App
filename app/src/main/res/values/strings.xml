@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NinJa Reporter</string>
+    <string name="add">Add</string>
+    <string name="no_data_available">No Data Available!!</string>
+    <string name="name">NAME</string>
+    <string name="occupation">OCCUPATION</string>
+    <string name="experience">EXPERIENCE</string>
+    <string name="submit">SUBMIT</string>
 </resources>

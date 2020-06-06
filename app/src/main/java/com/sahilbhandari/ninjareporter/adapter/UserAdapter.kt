@@ -1,7 +1,6 @@
 package com.sahilbhandari.ninjareporter.adapter
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sahilbhandari.ninjareporter.R
 import com.sahilbhandari.ninjareporter.model.UserDetails
 
-class UserAdapter (private val partItemList: List<UserDetails>, private val listener: ItemClickListener, val context: Context) : RecyclerView.Adapter<UserAdapter.PartViewHolder>() {
+class UserAdapter(
+    private val partItemList: List<UserDetails>,
+    private val listener: ItemClickListener
+) : RecyclerView.Adapter<UserAdapter.PartViewHolder>() {
 
     override fun getItemCount(): Int {
         return partItemList.size
@@ -40,7 +42,7 @@ class UserAdapter (private val partItemList: List<UserDetails>, private val list
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: PartViewHolder, position: Int) {
         val part = partItemList[position]
-        if (part.experience.toInt()>1){
+        if (part.experience >1){
             holder.tvExp.text = part.experience.toString()+" YEARS"
         } else{
             holder.tvExp.text = part.experience.toString()+" YEAR"

@@ -13,12 +13,12 @@ import io.realm.Realm
 
 class AddUserDetail : AppCompatActivity() {
 
-    lateinit var btnBack:ImageView
-    lateinit var btnSubmit:Button
-    lateinit var etName:EditText
-    lateinit var etExp:EditText
-    lateinit var etOccupation:EditText
-    lateinit var realm: Realm
+    private lateinit var btnBack:ImageView
+    private lateinit var btnSubmit:Button
+    private lateinit var etName:EditText
+    private lateinit var etExp:EditText
+    private lateinit var etOccupation:EditText
+    private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

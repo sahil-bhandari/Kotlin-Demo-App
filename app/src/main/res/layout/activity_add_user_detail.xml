@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/ic_arrow_back_black_24dp"
-        android:layout_margin="24dp"/>
+        android:layout_margin="24dp"
+        android:contentDescription="TODO" />
 
     <LinearLayout
         android:layout_centerInParent="true"
@@ -39,7 +39,7 @@
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=" NAME" />
+                android:hint="@string/name" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +56,7 @@
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=" OCCUPATION" />
+                android:hint="@string/occupation" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +74,7 @@
                 android:id="@+id/etExp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=" EXPERIENCE" />
+                android:hint="@string/experience" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -86,7 +86,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
-        android:text=" SUBMIT "
+        android:text="@string/submit"
         android:textColor="@android:color/black"
         android:id="@+id/btnSubmit"/>
 

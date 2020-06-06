@@ -9,4 +9,4 @@ open class UserDetails(
     var name: String = "",
     var experience: Int = 0,
     var occupation: String = ""
-) : RealmObject() {}
+) : RealmObject()

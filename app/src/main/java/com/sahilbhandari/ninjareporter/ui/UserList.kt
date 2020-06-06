@@ -19,11 +19,11 @@ import io.realm.Realm
 
 class UserList : AppCompatActivity() {
 
-    lateinit var realm: Realm
-    lateinit var rvUserList : RecyclerView
-    lateinit var tvEmpty : TextView
-    lateinit var userAdapterVar: UserAdapter
-    lateinit var userDetailsList: ArrayList<UserDetails>
+    private lateinit var realm: Realm
+    private lateinit var rvUserList : RecyclerView
+    private lateinit var tvEmpty : TextView
+    private lateinit var userAdapterVar: UserAdapter
+    private lateinit var userDetailsList: ArrayList<UserDetails>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class UserList : AppCompatActivity() {
             override fun clickToDelete(id: Int) {
                 realmDelete(id)
             }
-        },this@UserList)
+        })
         rvUserList.adapter = userAdapterVar
         userAdapterVar.notifyDataSetChanged()
     }
