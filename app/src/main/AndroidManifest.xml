@@ -3,13 +3,14 @@
     package="com.sahilbhandari.ninjareporter">
 
     <application
+        android:name=".utils.RealmApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddUserDetail"></activity>
+        <activity android:name=".AddUserDetail"/>
         <activity android:name=".UserList" />
         <activity android:name=".Slash">
             <intent-filter>
