@@ -1,4 +1,4 @@
-package com.sahilbhandari.ninjareporter
+package com.sahilbhandari.ninjareporter.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.sahilbhandari.ninjareporter.R
 import com.sahilbhandari.ninjareporter.model.UserDetails
 import io.realm.Realm
 

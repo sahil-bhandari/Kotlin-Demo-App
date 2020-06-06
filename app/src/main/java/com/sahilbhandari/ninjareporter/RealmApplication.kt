@@ -1,4 +1,4 @@
-package com.sahilbhandari.ninjareporter.utils
+package com.sahilbhandari.ninjareporter
 
 import android.app.Application
 import io.realm.Realm

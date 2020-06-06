@@ -1,4 +1,4 @@
-package com.sahilbhandari.ninjareporter
+package com.sahilbhandari.ninjareporter.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.Window
 import android.view.WindowManager
+import com.sahilbhandari.ninjareporter.R
 
 class Slash : AppCompatActivity() {
 

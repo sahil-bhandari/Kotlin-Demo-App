@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
     android:gravity="center_vertical"
-    tools:context=".Slash">
+    tools:context=".ui.Slash">
 
     <ImageView
         android:src="@drawable/logo"

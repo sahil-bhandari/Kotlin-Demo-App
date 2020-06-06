@@ -1,15 +1,17 @@
-package com.sahilbhandari.ninjareporter
+package com.sahilbhandari.ninjareporter.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
+import com.sahilbhandari.ninjareporter.R
 import com.sahilbhandari.ninjareporter.adapter.UserAdapter
 import com.sahilbhandari.ninjareporter.model.UserDetails
 import io.realm.Realm
@@ -19,6 +21,7 @@ class UserList : AppCompatActivity() {
 
     lateinit var realm: Realm
     lateinit var rvUserList : RecyclerView
+    lateinit var tvEmpty : TextView
     lateinit var userAdapterVar: UserAdapter
     lateinit var userDetailsList: ArrayList<UserDetails>
 
@@ -41,8 +44,11 @@ class UserList : AppCompatActivity() {
         for (s in 0 until realmUserList.size) {
             realmUserList[s]?.let { userDetailsList.add(it) }
         }
-        Log.d("TAG",realmUserList.toString())
-        Log.d("TAG",userDetailsList.toString())
+        if (userDetailsList.isEmpty()){
+            tvEmpty.visibility=View.VISIBLE
+        } else{
+            tvEmpty.visibility=View.GONE
+        }
         userAdapterVar= UserAdapter(userDetailsList, object : UserAdapter.ItemClickListener {
             override fun clickToDelete(id: Int) {
                 realmDelete(id)
@@ -57,8 +63,15 @@ class UserList : AppCompatActivity() {
         alertDialog.setTitle("Delete!")
             .setMessage("Are you Sure?")
             .setPositiveButton(android.R.string.ok) { dialogInterface, i ->
-                realm.where(UserDetails::class.java).equalTo("id", id).findFirst()!!.deleteFromRealm()
-                Toast.makeText(this@UserList,"Entry deleted.",Toast.LENGTH_SHORT).show()
+                try {
+                    realm.beginTransaction()
+                    realm.where(UserDetails::class.java).equalTo("id", id).findFirst()!!.deleteFromRealm()
+                    realm.commitTransaction()
+                    Toast.makeText(this@UserList,"Entry deleted.",Toast.LENGTH_SHORT).show()
+                    displayUser()
+                } catch (e: Exception) {
+                    Toast.makeText(this@UserList,"Unable to delete entry.",Toast.LENGTH_SHORT).show()
+                }
             }
             .setNegativeButton(android.R.string.cancel){dialogInterface, i ->null}
             .show()
@@ -67,6 +80,7 @@ class UserList : AppCompatActivity() {
     private fun initViews() {
         userDetailsList= ArrayList()
         rvUserList=findViewById(R.id.rvUserList)
+        tvEmpty=findViewById(R.id.tvEmpty)
     }
 
     private fun setupToolbar() {
