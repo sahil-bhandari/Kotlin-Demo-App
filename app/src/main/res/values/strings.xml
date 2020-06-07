@@ -6,4 +6,5 @@
     <string name="occupation">OCCUPATION</string>
     <string name="experience">EXPERIENCE</string>
     <string name="submit">SUBMIT</string>
+    <string name="todo">TODO</string>
 </resources>

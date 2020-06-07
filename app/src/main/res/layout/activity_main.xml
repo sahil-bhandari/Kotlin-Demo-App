@@ -12,14 +12,14 @@
         android:src="@drawable/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:layout_marginTop="55dp"
         android:src="@drawable/appname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/todo" />
 
 
 </LinearLayout>

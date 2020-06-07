@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.AddUserDetail"/>
+        <activity android:name=".ui.AddUserDetail"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
         <activity android:name=".ui.UserList" />
         <activity android:name=".ui.Slash">
             <intent-filter>
